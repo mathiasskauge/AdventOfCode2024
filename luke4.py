@@ -1,4 +1,4 @@
-input_file = open('test.txt', 'r')
+input_file = open('input4.txt', 'r')
 input_lines = input_file.readlines()
 
 # Convert to a grid of characters
