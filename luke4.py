@@ -25,7 +25,7 @@ for i in range(len(grid)):
 print(f"First answer: {result1}")
 
 
-##########
+###############################
 
 # Define all 4 possible directions (NE, SE, SW, NW)
 directions2 = [(-1, 1), (1, 1), (1, -1), (-1, -1)]
@@ -42,12 +42,15 @@ for i in range(len(grid)):
                      0 <= j + (dy) < len(grid[0]) and 
                      0 <= i - (dx) < len(grid) and 
                      0 <= j - (dy) < len(grid[0])):
+                    # Break if M's are on oppisite sides diagonally, this isn't allowed
                     if grid[i + (dx)][j + (dy)] == "M" and grid[i - (dx)][j - (dy)] == "M":
                         break
+                    # Count M's and S's in the right spots
                     if grid[i + (dx)][j + (dy)] == "M":
                         m_count += 1
                     if grid[i + (dx)][j + (dy)] == "S":
                         s_count += 1
+        
         if m_count == 2 and s_count == 2:               
             result2 += 1  # Increment the count
                     
